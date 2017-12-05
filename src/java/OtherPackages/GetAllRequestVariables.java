@@ -15,11 +15,14 @@ import javax.servlet.http.HttpServletRequest;
 public class GetAllRequestVariables 
 {
     private String RequestVriablesAre;
+    private int ContentLength;
     
     public GetAllRequestVariables(HttpServletRequest SentRequestIs,String Separator)
     {
         Enumeration get_var_names;
         get_var_names=SentRequestIs.getParameterNames();
+        
+        ContentLength=0;//intialize
         
             //loop through the enumaration
             int Counter=0;//count so to know how to attach
@@ -44,11 +47,15 @@ public class GetAllRequestVariables
                     //System.out.println(get_var_name+": "+get_var_val);
                     if(Counter==0)//if at first item just add do not concatnate
                     {
+                        get_var_val=get_var_name.equalsIgnoreCase("password")? "*****" :get_var_val;//if is password replace
                         RequestVriablesAre=get_var_name+"="+get_var_val;//aggregate to main stirng
+                        ContentLength+=get_var_name.length()+get_var_name.length();//aggregate length
                     }
                     else
                     {
+                        get_var_val=get_var_name.equalsIgnoreCase("password")? "*****" :get_var_val;//if is password replace
                         RequestVriablesAre+=Separator+""+get_var_name+"="+get_var_val;//aggregate to main stirng
+                        ContentLength+=get_var_name.length()+get_var_val.length();//aggregate length
                     }
                     
                     
@@ -61,11 +68,15 @@ public class GetAllRequestVariables
                          //System.out.println(get_var_name+": "+get_var_vals[i]);
                         if(Counter==0)//if at first item just add do not concatnate
                         {
+                            get_var_vals[i]=get_var_name.equalsIgnoreCase("password")? "*****" :get_var_vals[i];//if is password replace
                             RequestVriablesAre=get_var_name+"="+get_var_vals[i];//aggregate to main stirng
+                            ContentLength+=get_var_name.length()+get_var_vals[i].length();//aggregate length
                         }
                         else
                         {
+                            get_var_vals[i]=get_var_name.equalsIgnoreCase("password")? "*****" :get_var_vals[i];//if is password replace
                             RequestVriablesAre+=Separator+""+get_var_name+"="+get_var_vals[i];//aggregate to main stirng
+                            ContentLength+=get_var_name.length()+get_var_vals[i].length();//aggregate length
                         }
                           
                           
@@ -79,5 +90,10 @@ public class GetAllRequestVariables
     public String RequestVriablesAre()
     {
         return RequestVriablesAre;
+    }
+    
+    public int ContentLength()
+    {
+        return ContentLength;
     }
 }

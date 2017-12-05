@@ -27,7 +27,7 @@ public class VerifyRequest
         String VariablesAre=TheVariablesAre.RequestVriablesAre();//get params
         
         String APIKeyIs = SentRequestIs.getHeader("Authorization");//get authorization header
-        String ContentLength = String.valueOf(SentRequestIs.getContentLength());//length
+        String ContentLength = String.valueOf(TheVariablesAre.ContentLength());//length
         String RefererIS = SentRequestIs.getHeader("Origin");
         String RequestMethod = SentRequestIs.getMethod();
         String ScriptName = SentRequestIs.getRequestURI();
