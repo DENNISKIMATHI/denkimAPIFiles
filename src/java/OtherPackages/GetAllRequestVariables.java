@@ -7,6 +7,7 @@ package OtherPackages;
 
 import java.util.Enumeration;
 import javax.servlet.http.HttpServletRequest;
+import org.bson.Document;
 
 /**
  *
@@ -22,6 +23,15 @@ public class GetAllRequestVariables
         Enumeration get_var_names;
         get_var_names=SentRequestIs.getParameterNames();
         
+        //create resitricted variable names
+            Document RestrictedVariableNames = new Document(); 
+            RestrictedVariableNames.append("password","password" );
+            RestrictedVariableNames.append("session_key","session_key");
+            RestrictedVariableNames.append("old_password","old_password" );
+            RestrictedVariableNames.append("new_password","new_password");
+            RestrictedVariableNames.append("confirm_password","confirm_password");
+            RestrictedVariableNames.append("reset_key","reset_key");
+            
         ContentLength=0;//intialize
         
             //loop through the enumaration
@@ -47,13 +57,13 @@ public class GetAllRequestVariables
                     //System.out.println(get_var_name+": "+get_var_val);
                     if(Counter==0)//if at first item just add do not concatnate
                     {
-                        get_var_val=get_var_name.equalsIgnoreCase("password")? "*****" :get_var_val;//if is password replace
+                        get_var_val=get_var_name.equalsIgnoreCase(RestrictedVariableNames.getString(get_var_name))? "*****" :get_var_val;//if is password replace
                         RequestVriablesAre=get_var_name+"="+get_var_val;//aggregate to main stirng
                         ContentLength+=get_var_name.length()+get_var_name.length();//aggregate length
                     }
                     else
                     {
-                        get_var_val=get_var_name.equalsIgnoreCase("password")? "*****" :get_var_val;//if is password replace
+                        get_var_val=get_var_name.equalsIgnoreCase(RestrictedVariableNames.getString(get_var_name))? "*****" :get_var_val;//if is password replace
                         RequestVriablesAre+=Separator+""+get_var_name+"="+get_var_val;//aggregate to main stirng
                         ContentLength+=get_var_name.length()+get_var_val.length();//aggregate length
                     }
@@ -68,13 +78,13 @@ public class GetAllRequestVariables
                          //System.out.println(get_var_name+": "+get_var_vals[i]);
                         if(Counter==0)//if at first item just add do not concatnate
                         {
-                            get_var_vals[i]=get_var_name.equalsIgnoreCase("password")? "*****" :get_var_vals[i];//if is password replace
+                            get_var_vals[i]=get_var_name.equalsIgnoreCase(RestrictedVariableNames.getString(get_var_name))? "*****" :get_var_vals[i];//if is password replace
                             RequestVriablesAre=get_var_name+"="+get_var_vals[i];//aggregate to main stirng
                             ContentLength+=get_var_name.length()+get_var_vals[i].length();//aggregate length
                         }
                         else
                         {
-                            get_var_vals[i]=get_var_name.equalsIgnoreCase("password")? "*****" :get_var_vals[i];//if is password replace
+                            get_var_vals[i]=get_var_name.equalsIgnoreCase(RestrictedVariableNames.getString(get_var_name))? "*****" :get_var_vals[i];//if is password replace
                             RequestVriablesAre+=Separator+""+get_var_name+"="+get_var_vals[i];//aggregate to main stirng
                             ContentLength+=get_var_name.length()+get_var_vals[i].length();//aggregate length
                         }
