@@ -4,9 +4,17 @@
         <servlet-name>UploadFiles</servlet-name>
         <servlet-class>MainPackages.UploadFiles</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>UploadInsurancePolicyImage</servlet-name>
+        <servlet-class>MainPackages.UploadInsurancePolicyImage</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>UploadFiles</servlet-name>
         <url-pattern>/MainPackages.UploadFiles</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>UploadInsurancePolicyImage</servlet-name>
+        <url-pattern>/MainPackages.UploadInsurancePolicyImage</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
@@ -30,7 +38,7 @@
                         http://127.0.0.1:8080/
                 </param-value>
     </context-param>
-     <context-param>
+    <context-param>
         <param-name>
                     file_server_base_url
                 </param-name>
@@ -46,7 +54,7 @@
                         denkimAPILogic/MainPackages.VerifyUserForFileServer
                 </param-value>
     </context-param>
-     <context-param>
+    <context-param>
         <param-name>
                     upload_dir
                 </param-name>
