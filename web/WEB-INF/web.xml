@@ -8,6 +8,10 @@
         <servlet-name>UploadInsurancePolicyImage</servlet-name>
         <servlet-class>MainPackages.UploadInsurancePolicyImage</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>UploadInsurancePolicyHTML</servlet-name>
+        <servlet-class>MainPackages.UploadInsurancePolicyHTML</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>UploadFiles</servlet-name>
         <url-pattern>/MainPackages.UploadFiles</url-pattern>
@@ -15,6 +19,10 @@
     <servlet-mapping>
         <servlet-name>UploadInsurancePolicyImage</servlet-name>
         <url-pattern>/MainPackages.UploadInsurancePolicyImage</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>UploadInsurancePolicyHTML</servlet-name>
+        <url-pattern>/MainPackages.UploadInsurancePolicyHTML</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
