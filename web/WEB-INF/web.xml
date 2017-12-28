@@ -35,7 +35,7 @@
                     authorization_url
                 </param-name>
         <param-value>
-                        http://35.184.46.252:6969/AuthenticationAPI/AuthenticationPackage.DeveloperAppApiKeyLog
+                        http://localhost:6969/AuthenticationAPI/AuthenticationPackage.DeveloperAppApiKeyLog
                 </param-value>
     </context-param>
     <context-param>
@@ -43,7 +43,7 @@
                     logic_server_base_url
                 </param-name>
         <param-value>
-                        http://127.0.0.1:8080/
+                        http://localhost:6969/
                 </param-value>
     </context-param>
     <context-param>
@@ -51,7 +51,7 @@
                     file_server_base_url
                 </param-name>
         <param-value>
-                        http://127.0.0.1:8080/denkimAPIFiles/
+                        http://35.184.46.252:6969/denkimAPIFiles/
                 </param-value>
     </context-param>
     <context-param>
@@ -67,7 +67,7 @@
                     upload_dir
                 </param-name>
         <param-value>
-                        C:\\Users\\mutemi\\Documents\\NetBeansProjects\\denkimAPIFiles\\build\\web
+                        /opt/tomcat/webapps/denkimAPIFiles
                 </param-value>
     </context-param>
     <!--context-->

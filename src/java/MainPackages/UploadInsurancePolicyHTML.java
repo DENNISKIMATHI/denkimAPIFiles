@@ -239,8 +239,8 @@ public class UploadInsurancePolicyHTML extends HttpServlet
                                             MakeMD5String md5_object=new MakeMD5String(is_policy_html);
                                             String is_policy_html_md5=md5_object.Md5StringIs();
             
-                                            String UserDir=UPLOAD_DIR_NAME+"\\"+is_policy_html_md5;
-                                            String TimestampDir=UserDir+"\\"+time_stamp_is;
+                                            String UserDir=UPLOAD_DIR_NAME+"/"+is_policy_html_md5;
+                                            String TimestampDir=UserDir+"/"+time_stamp_is;
                                             
                                             //check and make the dir
                                             File directory = new File(TimestampDir);

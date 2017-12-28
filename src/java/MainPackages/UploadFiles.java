@@ -233,8 +233,8 @@ public class UploadFiles extends HttpServlet
                                             MakeMD5String md5_object=new MakeMD5String(email_address);
                                             String email_address_md5=md5_object.Md5StringIs();
             
-                                            String UserDir=UPLOAD_DIR_NAME+"\\"+email_address_md5;
-                                            String TimestampDir=UserDir+"\\"+time_stamp_is;
+                                            String UserDir=UPLOAD_DIR_NAME+"/"+email_address_md5;
+                                            String TimestampDir=UserDir+"/"+time_stamp_is;
                                             
                                             //check and make the dir
                                             File directory = new File(TimestampDir);
