@@ -12,6 +12,10 @@
         <servlet-name>UploadInsurancePolicyHTML</servlet-name>
         <servlet-class>MainPackages.UploadInsurancePolicyHTML</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>ListInsurancePolicyImages</servlet-name>
+        <servlet-class>MainPackages.ListInsurancePolicyImages</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>UploadFiles</servlet-name>
         <url-pattern>/MainPackages.UploadFiles</url-pattern>
@@ -23,6 +27,10 @@
     <servlet-mapping>
         <servlet-name>UploadInsurancePolicyHTML</servlet-name>
         <url-pattern>/MainPackages.UploadInsurancePolicyHTML</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ListInsurancePolicyImages</servlet-name>
+        <url-pattern>/MainPackages.ListInsurancePolicyImages</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
