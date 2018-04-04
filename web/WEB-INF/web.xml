@@ -38,7 +38,7 @@
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>ListInsurancePolicyHTMLs</servlet-name>
-        <url-pattern>/denkimAPIFiles.ListInsurancePolicyHTMLs</url-pattern>
+        <url-pattern>/MainPackages.ListInsurancePolicyHTMLs</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
