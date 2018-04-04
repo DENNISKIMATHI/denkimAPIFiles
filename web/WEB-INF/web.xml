@@ -16,6 +16,10 @@
         <servlet-name>ListInsurancePolicyImages</servlet-name>
         <servlet-class>MainPackages.ListInsurancePolicyImages</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>ListInsurancePolicyHTMLs</servlet-name>
+        <servlet-class>MainPackages.ListInsurancePolicyHTMLs</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>UploadFiles</servlet-name>
         <url-pattern>/MainPackages.UploadFiles</url-pattern>
@@ -31,6 +35,10 @@
     <servlet-mapping>
         <servlet-name>ListInsurancePolicyImages</servlet-name>
         <url-pattern>/MainPackages.ListInsurancePolicyImages</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ListInsurancePolicyHTMLs</servlet-name>
+        <url-pattern>/denkimAPIFiles.ListInsurancePolicyHTMLs</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
